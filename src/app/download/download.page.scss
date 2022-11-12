@@ -1,0 +1,444 @@
+.image {
+    width: 70px;  
+    height: 70px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+.imagefull{
+    width: 100%; 
+}
+.item-def {
+    font-size: .81em;
+    color: rgb(58, 58, 58);
+    white-space: break-spaces;
+}
+.item-name {
+    font-weight: 800;
+    font-size: 1em;
+    color: rgb(12, 12, 12);
+}
+.smalltext {
+    margin: 0;
+    font-size: .91em;
+}
+
+ol.carousel-indicators {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+}
+
+ol.carousel-indicators li,
+ol.carousel-indicators li.active {
+    float: left;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    border-radius: 100%;
+    border: 10px;
+    background: #aeacac;
+}
+
+.card {
+    box-shadow: unset;
+    border: 1px solid #f2f2f2;
+    background-color: white !important;
+}
+
+.imgcard {
+    box-shadow: 10px;
+    border: 3px solid #ebebeb;
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.imgsize {
+    // max-height: 160px
+    margin: auto;
+    width: 100%;
+    height: auto;
+    img {
+        display: block;
+        width: auto;
+        height: 135px;
+        /* position: absolute; */
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin: auto;
+        /* opacity: 0; */
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+.imagemargin {
+    margin-top: 5px;
+    // margin-bottom: 5px;
+}
+
+.imagerwmargin {
+    margin-top: 8px;
+}
+
+.search-bar {
+    background-color: rgba(240, 240, 240, .5);
+    border-radius: 3px;
+    font-size: .9em !important;
+}
+
+.product-image-overlay {
+    position: unset;
+    width: 100% !important;
+    max-width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 75%, white 100%);
+}
+
+.divcard {
+    box-shadow: unset;
+    background-color: white !important;
+    border-radius: 30px !important;
+    height: 150px;
+}
+
+.divcardimgsize {
+    // max-height: 160px
+    margin: 10px;
+    width: auto;
+    height: 0px;
+    img {
+        display: block;
+        width: auto;
+        height: 100%;
+        /* position: absolute; */
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin: auto;
+        /* opacity: 0; */
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+.item-avatar {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100px !important; //any size
+    max-height: 100px !important; //any size 
+    //margin: auto;
+}
+
+.pre {
+    display: block;
+    //font-family: arial;
+    //margin: 1em 1em;
+    margin-top: 0px;
+    white-space: break-spaces;
+    text-overflow: ellipsis;
+}
+.product_name {
+    font-size: 13px;
+    line-height: 1.2em;
+    /* Sets line height to 1.5 times text size */
+    // height: 2em;
+    /* Sets the div height to 2x line-height (3 times text size) */
+    width: 100%;
+    /* Use whatever width you want */
+    // white-space: normal;
+    /* Wrap lines of text */
+    // overflow: hidden;
+    /* Hide text that goes beyond the boundaries of the div */
+    // text-overflow: ellipsis;
+    /* Ellipses (cross-browser) */
+    // -o-text-overflow: ellipsis;
+    /* Ellipses (cross-browser) */
+    text-align: left;
+    // -webkit-line-clamp: 2;
+    // text-overflow: ellipsis;
+    // overflow: hidden;        
+    // white-space: nowrap;
+    // font-size: 14px;
+}
+
+.topmargin {
+    margin-top: -10px;
+}
+
+.recentlyviewdmargin {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.container-outer {
+    overflow: scroll;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #ffffff;
+}
+
+.container-inner {
+    min-width: 90px;
+    max-width: 100px;
+    display: inline;
+    padding: 3px 3px;
+    align-content: center !important;
+}
+
+.spon-img {
+    min-height: 100px;
+    max-height: 100px;
+    margin: 3px;
+    //margin-left: 20px;
+}
+
+.slidemargin {
+    margin: 3px;
+    height: 100px;
+}
+
+.slidesmargin {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.custon-nav {
+    height: 48px;
+    width: 20px;
+    cursor: pointer;
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev-icon-custom {
+    background: url(../../assets/images/back.png) no-repeat scroll 6px 0px; //0
+}
+
+.prev-icon-custom.disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.next-icon-custom {
+    background: url(../../assets/images/next.png) no-repeat scroll -18px 0px; //-12
+}
+
+.next-icon-custom.disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.slider-nav {
+    ion-icon {
+        height: 100%;
+    }
+}
+
+.hover-pre-buttons {
+    //bottom: 5px;
+    z-index: 10;
+    //left: 8px;
+    top: 65px
+}
+
+.hover-next-buttons {
+    //bottom: 5px;
+    z-index: 10;
+    //left: 140px;
+    top: 65px
+}
+
+.buttonbg {
+    background-color: #6e7069;
+}
+
+.black {
+    color: black;
+}
+
+.rowpad {
+    padding: 0px;
+}
+
+.rowmargin {
+    margin-top: -25px;
+}
+
+.imgwidth {
+    width: 25px;
+    // margin-left: 45px;
+}
+
+.divmargin {
+    height: auto;
+    padding: 15px 15px 10px 15px;
+}
+
+.buttonheight {
+    height: 30px;
+}
+
+.divcardtest {
+    box-shadow: unset;
+    border: none;
+    background-color: white !important;
+}
+
+.divcardimgsizetest {
+    // max-height: 160px
+    margin: auto;
+    width: auto; //150px
+    // max-width: 100%;
+    height: 150px;
+    img {
+        display: block;
+        width: auto;
+        height: 100%;
+        /* position: absolute; */
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin: auto;
+        /* opacity: 0; */
+        // max-width: 100%;
+        max-height: 100%;
+        background-color: white;
+    }
+}
+
+.product_nametest {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #3a383b; //black;
+    font-size: 13px;
+}
+
+.divbackground {
+    background-color: #2c2c2c;
+    margin-top: 5px;
+}
+
+.tectclr {
+    color: #b0ca1f;
+}
+
+.colheight {
+    height: 30px;
+    //margin-top: -8px;
+}
+
+.card {
+    box-shadow: unset;
+    border: 0.1px solid #EEE; //#4b4a4a; // #959494;
+    //background-color: white !important;
+}
+
+.mat-card {
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+    display: block;
+    position: relative;
+    padding: 10px;
+    border-radius: 0px;
+    //background: #242225;
+    background-color: #FFFFFF;
+    width: 100%;
+}
+
+.mat-card-content :first-child {
+    margin-top: 5px;
+}
+
+.margintop {
+    margin-top: 25px;
+}
+
+.divheight {
+    height: 100%;
+}
+
+.colmargin {
+    margin-top: 4px;
+}
+
+.rowborder {
+    border-radius: 58px;
+    overflow: hidden;
+}
+
+ion-content {
+    --background: #f1f3f6;
+    --background-repeat: no-repeat;
+    --background-size: cover;
+}
+
+.btmmargin {
+    margin-bottom: 30px;
+}
+
+ion-slides {
+    --bullet-background: white;
+    --bullet-background-active: #b0ca1f;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+.my-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 20;
+    top: 0;
+    left: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    height: 100px;
+    width: 100px;
+    outline: black;
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    //border: 1px solid black;
+    background-image: none;
+}
+
+.carousel-control-next-icon:after {
+    content: '>';
+    font-size: 35px;
+    color: #b0ca1f;
+}
+
+.carousel-control-prev-icon:after {
+    content: '<';
+    font-size: 35px;
+    color: #b0ca1f;
+}
+
+ol.carousel-indicators li {
+    background-color: #aeacac;
+}
+
+ol.carousel-indicators li.active {
+    background-color: #b0ca1f;
+}
+.webPage {
+    width: 100%;
+    height: 98vh;
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}

@@ -1,0 +1,101 @@
+<ion-header class="mybg">
+  <ion-toolbar color="mytheme">
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+  </ion-buttons>
+    <ion-title color="light"><strong>Order Product</strong></ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="more" slot="icon-only" (click)="moreoption($event)" color="light" margin></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+  <ion-row margin-horizontal >
+    <ion-col size="4" text-center >
+      <img class="image" [src]='productData.image[0]' alt="productData.product_name">
+    </ion-col>
+    <ion-col size="8" style="margin-top: 20px;">
+      <h3 no-margin class="item-name product_name" (click)="productdetails(item)">{{productData.product_name}}</h3>
+      <h5 no-margin class="item-def product_name">Category - {{productData.categories_name}}</h5>
+      <ion-row>
+        <ion-text no-margin>
+          <span class="smalltext">₹ {{productData.selling_price}}</span>
+        </ion-text>
+      </ion-row>
+      <!-- <ion-row>
+        <ion-text no-margin>
+          <span class="item-def">finish - {{productData.finish}}</span>
+        </ion-text>
+      </ion-row>
+      <ion-row>
+        <ion-text no-margin>
+          <span class="item-def">size - {{productData.size}}</span>
+        </ion-text>
+      </ion-row> -->
+    </ion-col>
+  </ion-row>
+  <div class="cardsep"></div>
+</div>
+  <form [formGroup]="addressForm">
+    <ion-row>
+      <ion-col>
+        <ion-text><span class="label">Full Name*</span></ion-text>
+        <ion-input class="input"  formControlName='full_name' padding-horizontal></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text><span class="label">Address*</span></ion-text>
+        <ion-textarea class="input"  formControlName='address' ></ion-textarea>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text><span class="label">City*</span></ion-text>
+        <ion-input class="input"  formControlName='city' padding-horizontal></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-text><span class="label">State*</span></ion-text>
+        <ion-input class="input"  formControlName='state' padding-horizontal></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text><span class="label">Zipcode*</span></ion-text>
+        <ion-input class="input"   formControlName='pincode' type="number" padding-horizontal></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text><span class="label">Phone Number*</span></ion-text>
+        <ion-input class="input"  formControlName='mobile_no' type="number" padding-horizontal></ion-input>
+      </ion-col>
+    </ion-row>
+
+      <ion-radio-group formControlName='paymentType'>
+        <ion-list-header color="white">
+           <ion-label><strong>Select payment method</strong></ion-label>
+        </ion-list-header>
+           <ion-item lines="none"  class="paymentcard">
+              <ion-label>
+                <ion-row align-items-center>
+                   <p no-margin><strong>COD</strong></p>
+                </ion-row>
+              </ion-label>
+              <ion-radio slot="start" value="COD" ></ion-radio>
+           </ion-item>
+         
+        </ion-radio-group>
+    
+     
+     <ion-row>
+      <ion-col>
+        <ion-button expand="block" [disabled]=" addressForm.invalid"  (click)="orderNow()" color="mytheme"><strong class="light">Order</strong></ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+  
+</ion-content>

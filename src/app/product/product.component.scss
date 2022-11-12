@@ -1,0 +1,238 @@
+.ol.carousel-indicators li,
+ol.carousel-indicators li {
+    background: #aeacac;
+}
+
+.ol.carousel-indicators li,
+ol.carousel-indicators li.active {
+    background: #b0ca1f;
+}
+
+.product-image-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    //background: linear-gradient(transparent 75%,white 100%);
+}
+.swiper-pagination{
+    bottom: -5px !important;
+}
+.hover-buttons {
+    position: absolute;
+    bottom: -10px;
+    z-index: 10;
+    right: 15px;
+}
+
+// .red{
+//      width: 25px;
+//     height: 25px;
+//     color: red;
+// }
+.price {
+    font-size: 15px;
+    float: left;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 3px;
+}
+
+.inline {
+    font-size: 12px;
+    margin-inline-end: 5px;
+    text-decoration: line-through;
+}
+
+.badge {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 8px 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    min-width: 45px;
+    border: 0.6px solid rgba(120, 120, 120, 0.5);
+    border-radius: 25px;
+    z-index: 9;
+    font-size: 16px;
+}
+
+.cmnt {
+    font-size: 12px;
+}
+
+.rev-img {
+    width: 50px;
+}
+
+.row {
+    margin-left: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.spon-img {
+    min-height: 100px;
+    max-height: 100px;
+    margin: 3px;
+}
+
+.container-outer {
+    overflow: scroll;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.container-inner {
+    min-width: 120px;
+    max-width: 120px;
+    display: inline;
+    padding: 3px 9px;
+    align-content: center !important;
+}
+
+.progress-outer {
+    width: 96%;
+    text-align: center;
+    background-color: #f4f4f4;
+    border: 1px solid #dcdcdc;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.progress-inner {
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: var(--ion-color-mytheme);
+}
+
+.info {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.name {
+    font-size: 18px;
+}
+
+.small-ico {
+    font-size: 12px;
+}
+
+.avatar {
+    width: 33px;
+    height: 33px;
+}
+
+.sep {
+    height: 1px;
+    background-color: rgb(210, 210, 210);
+    width: 100vw;
+    margin: 6px 0;
+    transform: translateX(-16px);
+}
+
+.fab {
+    width: 40px;
+    height: 40px;
+    padding: 9px;
+    border-radius: 20px;
+    margin-left: 6px;
+    border: .6px solid rgba(0, 0, 0, .3);
+    background-color: white !important;
+}
+
+.gray {
+    width: 25px;
+    height: 25px;
+    border: rgba(0, 0, 0, .3);
+}
+
+.rate {
+    color: var(--ion-color-mytheme) !important;
+    font-size: 12px;
+}
+
+.full {
+    width: 100%;
+    display: block;
+}
+
+.label {
+    font-size: 12px;
+}
+
+.input {
+    border: .5px solid rgb(210, 210, 210);
+    background-color: rgba(240, 240, 240, .5);
+    border-radius: 3px;
+    font-size: .9em !important;
+}
+
+.selectedinput {
+    border: .5px solid rgb(0, 0, 0);
+    background-color: #b0ca1f; // #31B1F0;
+    border-radius: 3px;
+    font-size: .9em !important;
+    color: black;
+}
+
+.marginrgh {
+    margin-right: 3px;
+}
+
+.tpmargin {
+    margin-top: 5px;
+}
+
+.pre {
+    display: block;
+    //font-family: arial;
+    //margin: 1em 1em;
+    margin-top: 0px;
+    white-space: break-spaces;
+    text-overflow: ellipsis;
+}
+
+ion-slides {
+    --bullet-background: white;
+    --bullet-background-active: #b0ca1f;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    height: 100px;
+    width: 100px;
+    outline: black;
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    //border: 1px solid black;
+    background-image: none;
+}
+
+.carousel-control-next-icon:after {
+    content: '>';
+    font-size: 35px;
+    color: #b0ca1f;
+}
+
+.carousel-control-prev-icon:after {
+    content: '<';
+    font-size: 35px;
+    color: #b0ca1f;
+}
+
+ol.carousel-indicators li {
+    background-color: #aeacac!important;
+}
+
+ol.carousel-indicators li.active {
+    background-color: #b0ca1f!important;
+}
+
+ion-slides {
+    --bullet-background: #aeacac;
+    --bullet-background-active: #b0ca1f;
+}

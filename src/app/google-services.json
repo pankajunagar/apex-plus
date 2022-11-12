@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "319484043549",
+    "firebase_url": "https://apexplus-ac1b7.firebaseio.com",
+    "project_id": "apexplus-ac1b7",
+    "storage_bucket": "apexplus-ac1b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319484043549:android:48d01e07ef1c42bb7341f4",
+        "android_client_info": {
+          "package_name": "com.iinfosoft.apexplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319484043549-5tm78mr4d2j5ppbp98208bfd4qles12n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDztpqJnFueoLbUmK_9T_cYi0Uwdct5u0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319484043549-5tm78mr4d2j5ppbp98208bfd4qles12n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "319484043549-2in090k82d1luh4ojb8s2jl6q593ia00.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.apexplus.iinfosoft"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

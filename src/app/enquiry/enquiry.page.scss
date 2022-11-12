@@ -1,0 +1,67 @@
+    .form_radio input[type="radio"]:checked+label {
+        color: #b0ca1f!important;
+    }
+    
+    .input {
+        border: .5px solid rgb(210, 210, 210);
+        background-color: rgb(255, 255, 255);
+        border-radius: 3px;
+        margin-top: 6px;
+        font-size: .9em !important;
+    }
+    
+    .textareaheight {
+        height: 120px;
+    }
+    
+    .radiobtnmargin {
+        margin-right: 0px;
+    }
+    
+    .rowwidth {
+        width: 100%;
+    }
+    
+    .marginleft {
+        margin-left: 10px;
+    }
+    
+    .label {
+        font-size: 12px;
+    }
+    
+    .lfmargin {
+        margin-left: -14px;
+    }
+    
+    .rotateCss {
+        transform: scale(-1, 1);
+    }
+    
+    // ion-content{
+    //     --background: #383737;
+    //     --background-repeat: no-repeat;
+    //     --background-size: cover;  
+    //     }
+    .bgcolor {
+        color: #383737;
+    }
+    
+    .searchbar-input,
+    .sc-ion-searchbar-md {
+        display: none!important;
+    }
+    
+    .searchbar-input-container.searchbar-input,
+    .sc-ion-searchbar-md {
+        padding: 5px 16px!important;
+        font-size: 15px!important;
+        font-weight: 600!important;
+        -webkit-padding-start: 186important;
+        padding-inline-start: 16px!important;
+    }
+    
+    .searchbar-input.sc-ion-searchbar-md {
+        -webkit-padding-start: 16px!important;
+        padding-inline-start: 16px!important;
+    }

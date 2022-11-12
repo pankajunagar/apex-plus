@@ -1,0 +1,90 @@
+<!-- /**
+ * Shoppr - E-commerce app starter Ionic 4(https://www.enappd.com)
+ *
+ * Copyright © 2018-present Enappd. All rights reserved.
+ *
+ * This source code is licensed as per the terms found in the
+ * LICENSE.md file in the root directory of this source .
+ */ -->
+
+<div>
+<style>
+    
+.swiper-pagination{
+    bottom: -5px !important;
+}
+</style>
+    <ion-row padding-0>
+        <ion-col padding-0 class="padding-0">
+            <ion-slides pager="true" [options]="slideOpts" #slider>
+                <ion-slide *ngFor="let slidedata of productData.image; let i = index">
+                    <img [src]="slidedata" useImg (click)="viewImage(productData,slidedata,i)" [attr.data-slide-to]="i" style="height:360px;width:360px;">
+                    <div class="product-image-overlay" (click)="viewImage(productData,slidedata,i)"></div>
+                </ion-slide>
+            </ion-slides>
+            <ion-row justify-content-end class="hover-buttons" style="z-index: 99999;">
+                <img src='assets\images\share.png' float-right name="share" class="fab" (click)="shareCommon(productData.image[0])">
+                <img src='assets\images\heart-empty.png' *ngIf="!productData.wishlist" float-right name="heart-empty" class="fab" (click)="addProductToWishlist(productData)">
+                <img src='assets\images\heart.png' *ngIf="productData.wishlist" float-right name="heart" class="fab" (click)="addProductToWishlist(productData)">
+            </ion-row>
+        </ion-col>
+    </ion-row>
+
+    <div padding>
+        <ion-row lines="none" class="row">
+            <ion-text class="name">{{productData.product_name}}</ion-text>
+        </ion-row>
+        <ion-row lines="none" class="row">
+            <ion-text class="label">Product Code - {{productData.product_code}}</ion-text>
+        </ion-row>
+        <ion-row lines="none" class="row">
+            <ion-text class="label">Category - {{productData.categories_name}}</ion-text>
+        </ion-row>
+        <ion-row lines="none" class="row">
+            <ion-text class="label" style="color: #000000;"><strong>M.R.P. {{productData.selling_price}} </strong></ion-text>
+        </ion-row>
+
+        <ion-row class="tpmargin" *ngIf="showfinish">
+            <ion-label class="label">Finish</ion-label>
+        </ion-row>
+        <ion-row class="tpmargin" *ngIf="showfinish">
+            <div *ngFor="let finish of finishData" class="marginrgh">
+                <ion-text class="input" *ngIf="pList.finish != finish.color_master_id" disabled (click)="getDetails(finish,1)" padding-horizontal>{{finish.color_master_id}}</ion-text>
+                <ion-text class="selectedinput" *ngIf="pList.finish == finish.color_master_id" disabled padding-horizontal>{{finish.color_master_id}}</ion-text>
+            </div>
+        </ion-row>
+        <ion-row class="tpmargin" *ngIf="showsize">
+            <ion-label class="label">Size</ion-label>
+        </ion-row>
+        <ion-row class="tpmargin" *ngIf="showsize">
+            <div *ngFor="let size of sizeData" class="marginrgh">
+                <ion-text class="input" *ngIf="pList.size != size.size_master_id" disabled (click)="getDetails(size,2)" padding-horizontal>{{size.size_master_id}}</ion-text>
+                <ion-text class="selectedinput" *ngIf="pList.size == size.size_master_id" disabled padding-horizontal>{{size.size_master_id}}</ion-text>
+            </div>
+        </ion-row>
+        <ion-row class="tpmargin" *ngIf="lengthlist !=''">
+
+            <ion-text class="cmnt">Length : {{lengthlist}}</ion-text>
+
+        </ion-row>
+        <ion-row class="tpmargin" *ngIf="productData.weight !=''">
+
+            <ion-text class="cmnt">Weight : {{productData.weight}}</ion-text>
+
+        </ion-row>
+        <ion-row class="tpmargin" *ngIf="materiallist !=''">
+
+            <ion-text class="cmnt">Material : {{materiallist}}</ion-text>
+
+
+        </ion-row>
+        <div class="tpmargin" *ngIf="productData.description != ' '">
+
+            <div>
+                <p class="label pre" style="line-height: 20px">{{productData.description}}</p>
+            </div>
+
+        </div>
+
+    </div>
+</div>

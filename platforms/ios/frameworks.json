@@ -1,0 +1,13 @@
+{
+    "Security.framework": 1,
+    "SystemConfiguration.framework": 1,
+    "UIKit.framework": 1,
+    "Foundation.framework": 1,
+    "QuartzCore.framework": 1,
+    "ImageIO.framework": 1,
+    "MessageUI.framework": 2,
+    "libz.tbd": 1,
+    "CoreLocation.framework": 2,
+    "WebKit.framework": 1,
+    "Social.framework": 1
+}

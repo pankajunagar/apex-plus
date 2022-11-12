@@ -1,0 +1,65 @@
+<ion-header class="mybg">
+    <ion-toolbar color="mytheme">
+        <ion-buttons slot="start">
+            <ion-img class="imgwidth" src="assets/images/apexicon.png"></ion-img>
+        </ion-buttons>
+        <ion-title text-center color="light"><strong>New Messages</strong></ion-title>
+        <ion-buttons slot="end">
+            <img src='assets\images\more.png' slot="icon-only" (click)="moreoption($event)" color="light" margin
+                style="height: 20px;margin: 8px;">
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="text-center " *ngIf="!fun.networkStatus">
+        <img src="assets/images/no-internet.jpg">
+    </div>
+
+    <div *ngIf="fun.networkStatus">
+        <div class="mid" *ngIf="!show">
+            <ion-row size="12" justify-content-center disabled="true">
+                <button class="circle">
+                    <ion-icon name="list-box" size="large"></ion-icon>
+                </button>
+            </ion-row>
+            <ion-row size="12" justify-content-center disabled="true">
+                <ion-text><strong>No new messages found</strong></ion-text>
+            </ion-row>
+        </div>
+        <div *ngIf="show" style="margin-top: 6px;">
+            <!-- <ion-row margin-horizontal margin-bottom margin-top>
+                <ion-text><strong class="text">Wishlist Items</strong></ion-text>
+            </ion-row> -->
+            <ion-list #slidingList no-padding>
+                <ion-col no-padding *ngFor="let item of messagesData; let j = index;" no-margin>
+                    <div *ngIf="item.product_id<=0" style="border-bottom: 1px solid #eee;padding: 4px 0px;">
+                        <ion-row margin-horizontal>
+                            
+                            <ion-col size="12">
+                                <h3 no-margin class="item-name product_name" style="text-align: center;">{{item.title}}</h3>
+                                <h5 no-margin class="item-def product_name">{{item.message}}</h5>
+                            </ion-col>
+                            <ion-col size="12" text-center>
+                                <img class="imagefull" [src]='item.image' [alt]="item.title">
+                            </ion-col>
+                        </ion-row>
+                    </div>
+                    <div *ngIf="item.product_id>0" style="border-bottom: 1px solid #eee;padding: 4px 0px;">
+                        <ion-row margin-horizontal (click)="productdetails(item)">
+                            <ion-col size="3" text-center>
+                                <img class="image" [src]='item.product_image' [alt]="item.product_name">
+                            </ion-col>
+                            <ion-col size="9">
+                                <h3 no-margin class="item-name product_name">{{item.title}}</h3>
+                                <!-- <p class="label pre " style="line-height: 20px">{{item.message}}</p> -->
+                                <h5 no-margin class="item-def product_name">{{item.message}}</h5>
+                            </ion-col>
+                        </ion-row>
+                    </div>
+                    <div class="cardsep"></div>
+                </ion-col>
+            </ion-list>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,122 @@
+.search-bar {
+    background-color: #c3d45e;
+    border-radius: 3px;
+    font-size: .9em !important;
+    margin: 5px;
+}
+.btn {
+    margin: 3px;
+    padding: 5px;
+    border: .5px solid rgb(180, 180, 180);
+    border-radius: 6px;
+}
+.filter-btn {
+    padding-left: 3px;
+    font-size: 12px;
+    padding-right: 3px;
+}
+.view {
+    color: var(--ion-color-mytheme);
+    font-size: 12px;
+}
+.sep {
+    width: 100%;
+    height: 1px;
+    background-color: rgb(210, 210, 210);
+}
+.container-outer { 
+    overflow: scroll; 
+    display: flex;
+    flex-wrap: nowrap;
+}
+.container-inner { 
+    min-width: 120px; 
+    max-width: 120px;
+    display: inline;
+    padding: 3px 9px;
+    align-content: center !important;
+}
+.spon-img {
+    min-height: 100px;
+    max-height: 100px;
+    margin: 3px;
+}
+.card {
+    box-shadow: unset;
+    border: 0.1px solid #EEE; // #959494;
+    //background-color: white !important;
+}
+.red{
+    color: red;
+}
+.gray{
+    color: #000000; //#c2c2c2;
+}
+.hover-buttons{
+    position: absolute;
+    bottom: 5px;
+    z-index: 10;
+    right: 10px;
+    top: 190px
+}
+.product_name{
+    text-overflow: ellipsis;
+    overflow: hidden;        
+    white-space: nowrap;
+   // color: black;
+    font-size: 13px;
+    color: #3a383b;//black;
+}
+.mat-card {
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    display: block;
+    position: relative;
+    padding: 10px;
+    border-radius: 0px;
+    background: white//#242225;
+}
+.mat-card-content :first-child {
+    margin-top: 5px;
+}
+.imgsize{
+    // max-height: 160px
+    margin: auto;
+    // width: 200px;
+    max-width: 100%;
+    height: 200px;
+    img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        /* position: absolute; */
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin: auto;
+        /* opacity: 0; */
+        max-width: 100%;
+        max-height: 100%;
+        background-color: white;
+    }
+}
+.inline {
+    text-overflow: ellipsis;
+    overflow: hidden;        
+    white-space: nowrap;
+    font-size: 12px;
+    color: #484649;//#eae7e7;//#a5a1a1;
+    //color: #eae7e7;//#a5a1a1;
+}
+.btnmargin{
+    margin-right: -20px;
+}
+.imgwidth{
+    width: 25px;
+}
+.searchtxt{
+    color: #b0ca1f;
+    font-size: 12px;
+    background-color: #242225;
+    font-weight: bold;;
+}

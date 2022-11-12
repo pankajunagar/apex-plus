@@ -1,0 +1,83 @@
+<ion-header class="mybg">
+    <ion-toolbar color="mytheme">
+        <ion-buttons slot="start">
+            <ion-img class="imgwidth" src="assets/images/apexicon.png"></ion-img>
+        </ion-buttons>
+        <ion-title text-center color="light"><strong>Wishlist</strong></ion-title>
+        <ion-buttons slot="end">
+            <!-- <ion-icon name="more" slot="icon-only" (click)="moreoption($event)" color="light" margin></ion-icon> -->
+            <img src='assets\images\more.png' slot="icon-only" (click)="moreoption($event)" color="light" margin
+                style="height: 20px;margin: 8px;" />
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="text-center " *ngIf="!fun.networkStatus">
+        <img src="assets/images/no-internet.jpg">
+    </div>
+    <div *ngIf='fun.networkStatus'>
+        <div class="mid" *ngIf="!show">
+            <ion-row size="12" justify-content-center disabled="true">
+                <button class="circle">
+                    <ion-icon name="list-box" size="large"></ion-icon>
+                </button>
+            </ion-row>
+            <ion-row size="12" justify-content-center disabled="true">
+                <ion-text><strong>Your whishlist is empty</strong></ion-text>
+            </ion-row>
+            <ion-row size="12" justify-content-center disabled="true">
+                <ion-button fill="clear" color="primary" (click)="browse()">Browse Products</ion-button>
+            </ion-row>
+        </div>
+        <div *ngIf="show">
+            <ion-row margin-horizontal margin-bottom margin-top>
+                <ion-text><strong class="text">Wishlist Items</strong></ion-text>
+            </ion-row>
+            <ion-list #slidingList no-padding>
+                <ion-col no-padding *ngFor="let item of wishlistdata; let j = index;" no-margin>
+                    <ion-row margin-horizontal (click)="productdetails(item)">
+                        <ion-col size="3" text-center>
+                            <img class="image" [src]='item.image' alt="item.name">
+                        </ion-col>
+                        <ion-col size="7">
+                            <h3 no-margin class="item-name product_name">{{item.product_name}}</h3>
+                            <h5 no-margin class="item-def product_name">Category - {{item.categories_name}}</h5>
+                            <ion-row>
+                                <ion-text no-margin>
+                                    <span class="smalltext">₹ {{item.selling_price}}</span>
+                                </ion-text>
+                            </ion-row>
+                            <ion-row>
+                                <ion-text no-margin>
+                                    <span class="item-def">finish - {{item.finish}}</span>
+                                </ion-text>
+                            </ion-row>
+                            <ion-row>
+                                <ion-text no-margin>
+                                    <span class="item-def">size - {{item.size}}</span>
+                                </ion-text>
+                            </ion-row>
+                        </ion-col>
+                        <ion-col size="2">
+                            <ion-row margin-top>
+                                <ion-button fill="clear" color="mytheme" (click)="removefromwishlist(item, j)">
+                                    <!-- <ion-icon name="trash"></ion-icon> -->
+                                    <i class="fa fa-trash primary" style="font-size: medium; "></i>
+                                </ion-button>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                    <div class="cardsep"></div>
+                </ion-col>
+            </ion-list>
+        </div>
+    </div>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" class="position">
+    <ion-fab-button (click)="back()" class="btnsize" color="mytheme">
+        <!-- <ion-icon name="share-alt"  class="rotateCss" color="light"></ion-icon> -->
+        <img src='assets\images\back-btn.png' class="rotateCss" style="width: 15px;" alt="Back" color="light">
+    </ion-fab-button>
+</ion-fab>

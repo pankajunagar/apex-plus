@@ -1,0 +1,97 @@
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<ion-header class="mybg">
+    <ion-toolbar color="mytheme">
+        <ion-buttons slot="start">
+            <ion-img class="imgwidth" src="assets/images/apexicon.png"></ion-img>
+        </ion-buttons>
+        <ion-title text-center color="light"><strong>ApexPlus</strong></ion-title>
+        <ion-buttons slot="end">
+            <img src='assets\images\more.png' slot="icon-only" (click)="moreoption($event)" color="light" margin
+                style="height: 20px;margin: 8px;">
+            <!-- <ion-icon name="more" slot="icon-only" (click)="moreoption($event)" color="light" margin></ion-icon> -->
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<ion-content>
+
+    <div class="text-center " *ngIf="!sliderData">
+        <a href="">
+            <img src="assets/images/no-internet.jpg">
+        </a>
+    </div>
+    <div *ngIf="fun.networkStatus">
+        <!-- <ion-row padding-0>
+            <ion-col padding-0 class="padding-0">
+                <ion-slides pager="true" [options]="slideOpts" #slider>
+                    <ion-slide *ngFor="let slidedata of sliderData">
+                        <img [src]="slidedata.image" useImg>
+                        <div class="product-image-overlay"></div>
+                    </ion-slide>
+                </ion-slides>
+            </ion-col>
+        </ion-row> -->
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleFade" *ngFor="let slidedata of sliderData; let i = index"
+                    [attr.data-slide-to]="i" [ngClass]="{'active' : i == 0}"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let slidedata of sliderData; let i = index"
+                    [ngClass]="{'active': i == 0}">
+                    <img class="d-block w-100" [src]="slidedata.image">
+                </div>
+            </div>
+        </div>
+        <div class="imagerwmargin">
+            <div class="divbackground">
+                <ion-row>
+                    <ion-col>
+                        <ion-button expand="block" (click)="installationPage()" color="light" style="margin-inline:12px; margin-top:8px;background-color: #b5cf3e;"><strong
+                                color="mytheme">Installation Videos</strong></ion-button>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </div>
+        <div *ngFor="let catdata of homeData" class="imagerwmargin">
+            <div *ngIf="catdata['type'] === 'box'" class="divbackground divheight ">
+                <ion-row justify-content-center class="divmargin" padding>
+                    <ion-text text-center><span class="tectclr"><strong>{{catdata.name}}</strong></span></ion-text>
+                </ion-row>
+                <ion-row padding class="topmargin rowborder" *ngFor="let list of catdata.data">
+                    <mat-card (click)="opendetails(list)" class="card" no-margin>
+                        <div class="divcardimgsizetest">
+                            <img [src]="list.image">
+                        </div>
+                        <mat-card-content>
+                            <mat-card-title text-center class='product_nametest'>{{list.category_name}}</mat-card-title>
+                        </mat-card-content>
+                    </mat-card>
+                </ion-row>
+                <ion-row style="margin-top: -10px;">
+                    <ion-col>
+                        <ion-button expand="block" (click)="categoryPage()" color="light"><strong color="mytheme">View
+                                All Products</strong></ion-button>
+                    </ion-col>
+                </ion-row>
+            </div>
+
+            <div *ngIf="catdata['type'] === 'normal'">
+                <ion-row *ngFor="let list of catdata.data" class="imagerwmargin ">
+                    <ion-card class="imgcard" no-margin>
+                        <img-loader [src]="list.image" useImg (click)="openProductList(list.category_id)"></img-loader>
+                    </ion-card>
+                </ion-row>
+            </div>
+
+        </div>
+    </div>
+    <!-- <ion-row>
+  <ion-col>
+    <ion-button expand="block" (click)="categoryPage()" color="mytheme"><strong class="light">View All</strong></ion-button>
+  </ion-col>
+</ion-row> -->
+
+</ion-content>

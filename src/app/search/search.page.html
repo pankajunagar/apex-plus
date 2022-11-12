@@ -1,0 +1,114 @@
+<!-- /**
+ * Shoppr - E-commerce app starter Ionic 4(https://www.enappd.com)
+ *
+ * Copyright © 2018-present Enappd. All rights reserved.
+ *
+ * This source code is licensed as per the terms found in the
+ * LICENSE.md file in the root directory of this source .
+ */ -->
+
+<ion-header class="mybg">
+    <ion-toolbar color="mytheme">
+        <ion-buttons slot="start" style="margin-right: 10px;">
+            <ion-img class="imgwidth" src="assets/images/apexicon.png"></ion-img>
+        </ion-buttons>
+        <ion-input #searchInput tabindex="1" contenteditable="true" type="text" [(ngModel)]="searchkey" (ionChange)="onChange($event.target.value)" padding-start placeholder="I am looking for..." class="search-bar"></ion-input>
+        <!-- <ion-searchbar (ionChange)='onChange($event)'></ion-searchbar> -->
+        <ion-buttons slot="end">
+            <!-- <ion-button class="btnmargin" (click)="search()">
+                <ion-icon name="search" slot="icon-only" no-margin color="light" class="top-btn"></ion-icon>
+            </ion-button> -->
+            <ion-button (click)="moreoption($event)">
+                <!-- <ion-icon name="more" slot="icon-only" (click)="moreoption($event)" color="light" margin></ion-icon> -->
+                <img src='assets\images\more.png' slot="icon-only" (click)="moreoption($event)" color="light" margin style="height: 20px;margin: 8px;" />
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="text-center " *ngIf="!data">
+        <img src="assets/images/no-internet.jpg">
+    </div>
+    <ion-list>
+        <ion-item (click)="open(item)" *ngFor="let item of data">
+            <ion-col>
+                <ion-row>
+                    <ion-label style="font-size: 12px;font-family: auto;">
+                        <div [innerHTML]=" item.product_name | highlightSearch  : searchkey"></div>
+                    </ion-label>
+                </ion-row>
+                <ion-row>
+                    <ion-label style="font-size: 12px;font-family: auto;">
+                        <div [innerHTML]=" item.categories_name | highlightSearch  : searchkey"></div>
+                    </ion-label>
+                </ion-row>
+            </ion-col>
+        </ion-item>
+    </ion-list>
+
+    <div *ngIf='fun.networkStatus'>
+        <div *ngIf="showrecent">
+            <ion-row>
+                <ion-col size="8">
+                    <ion-text><strong>
+          <h5 no-margin>Recently Viewed</h5>
+        </strong></ion-text>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col *ngFor="let list of recentproducts; let j = index;" size-lg="4" size-md="4" size-sm="6" size-xs="6" no-padding>
+                    <ion-row justify-content-end class="hover-buttons">
+                        <ion-icon *ngIf="!list.wishlist" size="small" float-right name="heart-empty" class="gray" (click)="addProductToWishlist(list)"></ion-icon>
+                        <ion-icon *ngIf="list.wishlist" size="small" float-right name="heart" class="red" (click)="addProductToWishlist(list)"></ion-icon>
+                    </ion-row>
+                    <mat-card (click)="open(list)" class="card" no-margin>
+                        <div class="imgsize">
+                            <img [src]="list.image[0]" [alt]="list.product_name">
+                        </div>
+                        <mat-card-content>
+                            <mat-card-title text-center class='product_name'>{{list.name}}
+                            </mat-card-title>
+                            <mat-card-subtitle text-center class="inline">{{list.categories_name}}</mat-card-subtitle>
+                        </mat-card-content>
+                    </mat-card>
+                </ion-col>
+            </ion-row>
+        </div>
+
+        <ion-row *ngIf='products.length > 0' class="searchtxt" justify-content-center>
+            <ion-text text-center><strong>Search Result </strong></ion-text>
+        </ion-row>
+        <ion-row *ngIf='products.length > 0'>
+            <ion-col *ngFor="let list of products; let j = index;" size-lg="4" size-md="4" size-sm="6" size-xs="6" no-padding>
+                <ion-row justify-content-end class="hover-buttons">
+                    <ion-icon *ngIf="!list.wishlist" size="small" float-right name="heart-empty" class="gray" (click)="addProductToWishlist(list)"></ion-icon>
+                    <ion-icon *ngIf="list.wishlist" size="small" float-right name="heart" class="red" (click)="addProductToWishlist(list)"></ion-icon>
+                </ion-row>
+                <mat-card (click)="open(list)" class="card" no-margin>
+                    <div class="imgsize">
+                        <img [src]="list.image" [alt]="list.product_name">
+                    </div>
+                    <mat-card-content>
+                        <mat-card-title class='product_name'>{{list.product_name}}
+                        </mat-card-title>
+                        <mat-card-subtitle class="inline">{{list.categories_name}}</mat-card-subtitle>
+                    </mat-card-content>
+                </mat-card>
+            </ion-col>
+        </ion-row>
+
+        <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadDataOnScroll($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+    </div>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" class="position">
+    <ion-fab-button (click)="back()" class="btnsize" color="mytheme">
+        <!-- <ion-icon name="share-alt"  class="rotateCss" color="light"></ion-icon> -->
+        <img src='assets\images\back-btn.png' class="rotateCss" style="width: 15px;" alt="Back" color="light">
+    </ion-fab-button>
+</ion-fab>

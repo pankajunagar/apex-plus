@@ -1,0 +1,95 @@
+<ion-header class="mybg bgcolor">
+    <ion-toolbar color="mytheme">
+        <ion-buttons slot="start" style="margin-right: 10px;">
+            <ion-img class="imgwidth" src="assets/images/apexicon.png"></ion-img>
+        </ion-buttons>
+        <!-- <ion-buttons slot="start">
+            <ion-back-button color="light"></ion-back-button>
+        </ion-buttons> -->
+        <ion-title color="light"><strong>Enquiry</strong></ion-title>
+        <ion-buttons slot="end" style="margin-right: 20px;">
+            <i class="fa fa-times" slot="icon-only" (click)="dismiss()" color="light" style="color: white;"></i>
+            <!-- <ion-icon name="close" slot="icon-only" (click)="dismiss()" color="light" margin></ion-icon> -->
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div [ngStyle]="{'background-color': fun.networkStatus ? '#383737' : 'white'}" style="height: 100%;">
+        <div class="text-center " *ngIf="!fun.networkStatus">
+            <img src="assets/images/no-internet.jpg">
+        </div>
+
+        <div *ngIf='fun.networkStatus' padding>
+            <form [formGroup]="enquiryForm">
+                <ion-row class="form_radio">
+                    <ion-col class=" col-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" formControlName="usertype" id="flexRadioDefault1" value="Dealer" required>
+                            <label class="form-check-label" for="flexRadioDefault1" style="font-size: large;color: #ffffff;font-weight: 800;margin-left: 8px;">Dealer</label>
+                        </div>
+                    </ion-col>
+                    <ion-col class=" col-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" formControlName="usertype" id="flexRadioDefault2" value="Distributor" required>
+                            <label class="form-check-label" for="flexRadioDefault2" style="font-size: large;color: #ffffff;font-weight: 800;margin-left: 8px;">Distributor</label>
+                        </div>
+                    </ion-col>
+                    <ion-col class=" col-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" formControlName="usertype" id="flexRadioDefault3" value="Architect" required>
+                            <label class="form-check-label" for="flexRadioDefault3" style="font-size: large;color: #ffffff;font-weight: 800;margin-left: 8px;">Architect</label>
+                        </div>
+                    </ion-col>
+                    <ion-col class=" col-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" formControlName="usertype" id="flexRadioDefault4" value="End User" required>
+                            <label class="form-check-label" for="flexRadioDefault4" style="font-size: large;color: #ffffff;font-weight: 800;margin-left: 8px;">End User</label>
+                        </div>
+                    </ion-col>
+                </ion-row>
+
+
+                <ion-row *ngIf="enquiryForm['value']['usertype'] !== 'End User'">
+                    <ion-input type="text" class="input" formControlName='company_name' placeholder="Company Name*" padding-horizontal required></ion-input>
+                </ion-row>
+                <ion-row>
+                    <ion-input type="text" class="input" formControlName='name' placeholder="Your Name*" padding-horizontal required></ion-input>
+                </ion-row>
+                <ion-row>
+                    <ion-input type="text" class="input" debounce="500" formControlName='city' [(ngModel)]="city" (ionChange)="getItems($event)" placeholder="Your City*" padding-horizontal required></ion-input>
+                    <ion-list *ngIf="isItemAvailable" style="width: 100%;height: 250px;position: absolute;z-index: 9999;overflow-y: auto;margin-top: 50px;">
+                        <ion-item *ngFor="let item of items" (click)="citySelected(item)" style="width: 100%;">{{ item }}</ion-item>
+                    </ion-list>
+                </ion-row>
+                <ion-row>
+                    <ion-input type="text" class="input" debounce="500" formControlName='state' [(ngModel)]="state" (ionChange)="getItemsState($event)" placeholder="Your State*" padding-horizontal required></ion-input>
+                    <ion-list *ngIf="isItemAvailableState" style="width: 100%;height: 250px;position: absolute;z-index: 9999;overflow-y: auto;margin-top: 50px;">
+                        <ion-item *ngFor="let item of itemsState" (click)="stateSelected(item)" style="width: 100%;">{{ item }}</ion-item>
+                    </ion-list>
+                </ion-row>
+                <ion-row>
+                    <ion-input type="text" class="input" formControlName='mobile' placeholder="Your Contact no.*" padding-horizontal required></ion-input>
+                </ion-row>
+                <ion-row>
+                    <ion-input type="text" class="input" formControlName='email' placeholder="Your Email*" padding-horizontal required></ion-input>
+                </ion-row>
+                <ion-row>
+                    <ion-textarea type="text" class="input textareaheight" formControlName='msg' placeholder="Enter Your Message*" required></ion-textarea>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-button expand="block" (click)="submit()" color="light"><strong class="mytheme">Submit</strong></ion-button>
+                    </ion-col>
+                </ion-row>
+            </form>
+        </div>
+    </div>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" class="position">
+    <ion-fab-button (click)="fun.back()" class="btnsize" color="mytheme">
+        <!-- <ion-icon name="share-alt"  class="rotateCss" color="light"></ion-icon> -->
+        <img src='assets\images\back-btn.png' class="rotateCss" style="width: 15px;" alt="Back" color="light">
+    </ion-fab-button>
+</ion-fab>

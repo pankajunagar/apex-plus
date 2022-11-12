@@ -1,0 +1,53 @@
+<link rel="stylesheet" href= 
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">      
+
+<ion-tabs>
+    <ion-tab-bar slot="bottom" class="tabbg">
+        <ion-tab-button tab="dashboard" class="tabbg">
+            <!-- <ion-icon name="home"></ion-icon> -->
+            <i class="fa fa-home" style="font-size: x-large;"></i>
+            <ion-label>Home</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="productcategory" class="tabbg">
+            <!-- <ion-icon name="aperture"></ion-icon> -->
+            <i class="fa fa-th-large" style="font-size: x-large;"></i>
+            <!-- <span class="iconic iconic-md" data-glyph="aperture" title="aperture" aria-hidden="true"></span> -->
+            <ion-label>Products</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="download" class="tabbg">
+            <!-- tab="download" (click)=" downloadpdf() "-->
+            <!-- <ion-icon name="phone-portrait "></ion-icon> -->
+            <!-- fa fa-envelope bell -->
+            <i class="fa fa-envelope" style="font-size: x-large; "></i>
+            <ion-badge color="danger" *ngIf="fun.cartcount!=0" class="cartcountpos" style="left: 60%; top: 5px;">{{fun.cartcount}}</ion-badge>
+            <!-- style="left: 0%; top: 0px;" -->
+            <!-- <img src='assets\images\catalog.png' alt="Catalogue " class="imgsize "> -->
+            <ion-label>Message</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="wishlist" class="tabbg ">
+            <!-- <ion-icon name="heart "></ion-icon> -->
+            <i class="fa fa-heart " style="font-size: x-large; "></i>
+            <ion-label>Wishlist</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="search" class="tabbg ">
+            <!-- <ion-icon name="search "></ion-icon> -->
+            <i class="fa fa-search " style="font-size: x-large; "></i>
+            <ion-label>Search</ion-label>
+        </ion-tab-button>
+    </ion-tab-bar>
+
+    <div text-center slot="bottom" class="linkbg " (click)="openWeb() " color="mytheme ">
+        <!-- <img src ='assets\images\pointer.png' style="margin-bottom: -4px; margin-right: 5px; "> -->
+        <img src='assets\images\pointer.png' class="iconmargin " style=" transform: scale(-1, 1) rotate(-30deg); ">
+        <strong class="blink " style="font-size: 18px; ">www.apexplus.in</strong>
+        <!-- <ion-icon name="heart "></ion-icon>  -->
+        <!-- <img src ='assets\images\pointer.png' class="rotateCss " style="margin-bottom: -4px; margin-left: 5px; "> -->
+        <img src='assets\images\pointer.png' class="iconmargin " style="transform: rotate(-30deg); ">
+    </div>
+
+    <!-- <div text-center class="linkbg " (click)="openWeb() " color="mytheme ">www.apexplus.in</div> -->
+    <!-- <ion-text text-center class="linkbg " color="mytheme ">www.apexplus.in</ion-text> -->
+</ion-tabs>

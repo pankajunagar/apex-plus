@@ -1,0 +1,86 @@
+<ion-header class="mybg">
+    <ion-toolbar color="mytheme">
+        <ion-buttons slot="start" style="margin-right: 10px;">
+            <ion-img class="imgwidth" src="assets/images/apexicon.png"></ion-img>
+        </ion-buttons>
+        <!-- <ion-buttons slot="start">
+            <ion-back-button color="light"></ion-back-button>
+        </ion-buttons> -->
+        <ion-title color="light"><strong>{{catTitle}}</strong></ion-title>
+        <ion-buttons slot="end">
+            <!-- <ion-icon name="more" slot="icon-only" (click)="moreoption($event)" color="light" margin></ion-icon> -->
+            <img src='assets\images\more.png' slot="icon-only" (click)="moreoption($event)" color="light" margin
+                style="height: 20px;margin: 8px;" />
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- <div class="mid" *ngIf="showMsg">
+    <ion-row size="12" justify-content-center disabled="true">
+      <button class="circle" (click)="reloadpage()">
+          <ion-icon name="sync" size="large"></ion-icon>        
+      </button>
+    </ion-row>
+    <ion-row size="12" justify-content-center disabled="true">
+      <ion-text><strong>No internet connection available</strong></ion-text>
+      <ion-text><strong>Please connect to internet and try again</strong></ion-text>
+    </ion-row>
+  </div> -->
+    <!-- <div *ngIf='!showMsg'>  -->
+    <div class="text-center " *ngIf="!productList">
+        <a href="">
+            <img src="assets/images/no-internet.jpg">
+        </a>
+    </div>
+
+    <div *ngIf="fun.networkStatus">
+        <ion-row>
+            <div *ngFor="let list of productList; let j = index;" style="border-bottom: 1px solid #ddd;">
+                <ion-row (click)="open(list)">
+                    <ion-col size="4">
+                        <ion-avatar class="item-avatar">
+                            <img [src]="list.image" (load)="list.loaded = true" style="border-radius: unset!important" [hidden]="!list.loaded">
+                            <img src="assets/images/loading-gif.gif" [hidden]="list.loaded" style="width: 76%;">
+                        </ion-avatar>
+                    </ion-col>
+                    <ion-col size="8">
+                        <ion-text class="title">{{list.product_name}}</ion-text>
+                        <ion-text class="subtitle">Code : {{list.product_code}}</ion-text>
+                        <ion-row class="subtitle" *ngFor="let prise of list.product_prise">
+                            <div class="subtitle" *ngIf="!list.product_prise_count">
+                                <ion-text class="subtitle" *ngIf="prise.color_master_id">Finish:<strong>{{prise.color_master_id}}</strong>
+                                </ion-text>    
+                                <ion-text class="subtitle" *ngIf="prise.size_master_id">Size:<strong>{{prise.size_master_id}}</strong>
+                                </ion-text>    
+                                <ion-text class="subtitle" *ngIf="prise.selling_price">M.R.P. <strong>{{prise.selling_price}}</strong>
+                                </ion-text>
+                            </div>
+                            <div class="subtitle" *ngIf="list.product_prise_count" style="border-top: 1px solid #ddd;">
+                                <ion-text *ngIf="prise.color_master_id">Finish:<strong>{{prise.color_master_id}}</strong>&nbsp;
+                                </ion-text>    
+                                <ion-text *ngIf="prise.size_master_id">Size:<strong>{{prise.size_master_id}}</strong>&nbsp;
+                                </ion-text>    
+                                <ion-text *ngIf="prise.selling_price">M.R.P.<strong>{{prise.selling_price}}</strong>
+                                </ion-text>
+                            </div>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-row>
+
+        <ion-infinite-scroll threshold="100px" (ionInfinite)="loadDataOnScroll($event)" *ngIf="showMsg">
+            <ion-infinite-scroll-content loadingSpinner="bubbles">
+            </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </div>
+</ion-content>
+
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" class="position">
+    <ion-fab-button (click)="fun.back()" class="btnsize" color="mytheme">
+        <!-- <ion-icon name="share-alt"  class="rotateCss" color="light"></ion-icon> -->
+        <img src='assets\images\back-btn.png' class="rotateCss" style="width: 15px;" alt="Back" color="light">
+    </ion-fab-button>
+</ion-fab>

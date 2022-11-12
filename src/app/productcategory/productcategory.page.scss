@@ -1,0 +1,56 @@
+.divcard {
+    box-shadow: unset;
+    background-color: white !important;
+    border-radius: 30px !important;;
+    height: 150px;
+}
+.item-avatar  {     
+    width:100% !important;  
+    height : 120% !important;  
+    max-width: 100px !important;  //any size
+    max-height: 120px !important; //any size 
+    //margin: auto;
+}
+.product_name{
+    font-size: 14px;
+    line-height: 1.5em; /* Sets line height to 1.5 times text size */
+    height: 3em; /* Sets the div height to 2x line-height (3 times text size) */
+    width: 100%; /* Use whatever width you want */
+    white-space: normal; /* Wrap lines of text */
+    overflow: hidden; /* Hide text that goes beyond the boundaries of the div */
+    text-overflow: ellipsis; /* Ellipses (cross-browser) */
+    -o-text-overflow: ellipsis; /* Ellipses (cross-browser) */
+    text-align: center;
+}
+.topmargin{
+    margin-top: -10px;
+}
+.imgwidth{
+    width: 25px;
+}
+.title{
+        font-size: 14px;
+        padding-top: 10px;
+       // line-height: 1.5em; /* Sets line height to 1.5 times text size */
+       // height: 3em; /* Sets the div height to 2x line-height (3 times text size) */
+        width: 100%; /* Use whatever width you want */
+       // white-space: normal; /* Wrap lines of text */
+        //overflow: hidden; /* Hide text that goes beyond the boundaries of the div */
+       // text-overflow: ellipsis; /* Ellipses (cross-browser) */
+      //  -o-text-overflow: ellipsis; /* Ellipses (cross-browser) */
+        //text-align: center;
+}
+.sep {
+    height: 1px;
+    background-color:#efefef;
+    width: 100vw;
+    margin: 5px 0;
+    margin-top: 15px;
+    //transform: translateX(-16px);
+}
+// .item-avatar  {     
+//     width:100% !important;  
+//     height : 120% !important;  
+//     max-width: 100px !important;  //any size
+//     max-height: 120px !important; //any size 
+// }

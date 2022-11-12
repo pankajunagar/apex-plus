@@ -1,0 +1,14 @@
+<!-- <ion-list *ngIf="showProgress">
+    <ion-list-header>
+      <ion-label>{{progress | number }}%</ion-label>
+    </ion-list-header>
+    <ion-progress-bar min="0" max="allProductList.length" [value]="progress"></ion-progress-bar>
+  </ion-list> -->
+
+  <!-- <progress-bar [progress]="loadProgress"></progress-bar> -->
+
+  <div class="progress-outer">
+    <div class="progress-inner" [style.width]="progress + '%'">
+        {{progress}}%
+    </div>
+</div>

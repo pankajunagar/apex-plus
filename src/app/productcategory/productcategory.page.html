@@ -1,0 +1,62 @@
+<ion-header class="mybg">
+    <ion-toolbar color="mytheme">
+        <ion-buttons slot="start">
+            <ion-img class="imgwidth" src="assets/images/apexicon.png"></ion-img>
+        </ion-buttons>
+        <ion-title text-center color="light"><strong>Product Category</strong></ion-title>
+        <ion-buttons slot="end">
+            <!-- <ion-icon name="more" slot="icon-only" (click)="moreoption($event)" color="light" margin></ion-icon> -->
+            <img src='assets\images\more.png' slot="icon-only" (click)="moreoption($event)" color="light" margin style="height: 20px;margin: 8px;" />
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- <ion-row padding>
+    <ion-col *ngFor="let list of categoryList" size-lg="2" size-md="2" size-sm="2" size-xs="4" class="divpadding">
+      <ion-card class="divcard" (click)='viewProduct(list)' no-margin no-padding>
+        <ion-avatar class="item-avatar ">
+          <img  [src]="list.image">
+        </ion-avatar>
+        <ion-card-content class="topmargin">
+          <ion-card-title class='product_name'>
+            {{list.category_name}}
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row> -->
+    <div class="text-center " *ngIf="!categoryList">
+        <a href="">
+            <img src="assets/images/no-internet.jpg">
+        </a>
+    </div>
+
+    <div *ngIf='fun.networkStatus'>
+        <div *ngFor="let list of categoryList" style="margin-top: -5px;">
+            <div style="height: 80px; margin : 5px">
+                <ion-row size-lg="2" size-md="2" size-sm="2" size-xs="4" (click)='viewProduct(list)'>
+                    <ion-col size="3">
+                        <ion-avatar class="item-avatar">
+                            <img [src]="list.image" (load)="list.loaded = true" [hidden]="!list.loaded">
+                            <img src="assets/images/loading-gif.gif" [hidden]="list.loaded" style="width: 76%;">
+                        </ion-avatar>
+                    </ion-col>
+                    <ion-col size="9" style="padding: 15px; display: flex; align-items: center; justify-content: center;">
+                        <ion-text class="title">{{list.category_name}}</ion-text>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <div class="sep"></div>
+
+        </div>
+    </div>
+
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" class="position">
+    <ion-fab-button (click)="back()" class="btnsize" color="mytheme">
+        <!-- <ion-icon name="share-alt"  class="rotateCss" color="light"></ion-icon> -->
+        <img src='assets\images\back-btn.png' class="rotateCss" style="width: 15px;" alt="Back" color="light">
+    </ion-fab-button>
+</ion-fab>

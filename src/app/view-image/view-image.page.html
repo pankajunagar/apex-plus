@@ -1,0 +1,50 @@
+<ion-header class="mybg">
+    <ion-toolbar color="mytheme">
+        <ion-buttons slot="start" style="margin-right: 10px;">
+            <ion-img class="imgwidth" src="assets/images/apexicon.png"></ion-img>
+        </ion-buttons>
+        <!-- <ion-buttons slot="start">
+            <ion-back-button color="light"></ion-back-button>
+        </ion-buttons> -->
+        <ion-title color="light"><strong>{{title}}</strong></ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- <ion-fab vertical="top" color='light' horizontal="start" slot="fixed">
+    <ion-fab-button color="white" style="--box-shadow : unset; " (click) = 'fun.back()'>
+      <ion-icon name="arrow-round-back" color="mytheme"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+    <!-- <div class = "aligncenter">
+    <div class="banner center_img">
+        <img [src]="img" class="crop_img">
+    </div>
+</div> -->
+    <div class="text-center " *ngIf="!fun.networkStatus">
+        <img src="assets/images/no-internet.jpg">
+    </div>
+    <div *ngIf='fun.networkStatus' style="height: 100%;">
+        <ion-slides [options]="slideOpts_view">
+            <ion-slide>
+                <div class="center_img swiper-zoom-container">
+                    <img [src]="img" class="crop_img">
+                </div>
+            </ion-slide>
+        </ion-slides>
+    </div>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" class="position">
+    <ion-fab-button (click)="fun.back()" class="btnsize" color="mytheme">
+        <!-- <ion-icon name="share-alt"  class="rotateCss" color="light"></ion-icon> -->
+        <img src='assets\images\back-btn.png' class="rotateCss" style="width: 15px;" alt="Back" color="light">
+    </ion-fab-button>
+</ion-fab>
+
+<!-- <ion-footer class="footer">
+  <div>
+    <img [src]='img' class="thumbnailcss ">
+  </div>
+</ion-footer> -->

@@ -1,0 +1,38 @@
+<ion-header class="mybg">
+    <ion-toolbar color="mytheme">
+        <ion-buttons slot="start" style="margin-right: 10px;">
+            <ion-img class="imgwidth" src="assets/images/apexicon.png"></ion-img>
+        </ion-buttons>
+        <!-- <ion-buttons slot="start">
+            <ion-back-button color="light"></ion-back-button>
+        </ion-buttons> -->
+        <ion-title color="light"><strong>About us</strong></ion-title>
+        <ion-buttons slot="end" style="margin-right: 20px;">
+            <i class="fa fa-times" slot="icon-only" (click)="dismiss()" color="light" style="color: white;"></i>
+            <!-- <ion-icon name="close" slot="icon-only" (click)="dismiss()" color="light" margin></ion-icon> -->
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="text-center " *ngIf="!fun.networkStatus">
+        <img src="assets/images/no-internet.jpg">
+    </div>
+
+    <div *ngIf='fun.networkStatus'>
+        <ion-buttons slot="start" style="margin-right: 10px;">
+            <ion-img class="imgwidth" style="width:100%;" src="./assets/images/apexplusaboutus.png"></ion-img>
+        </ion-buttons>
+
+        <ion-row padding>
+            <div class="txtcolor" [innerHTML]="info" style="margin-bottom: 36px;"></div>
+        </ion-row>
+    </div>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" class="position">
+    <ion-fab-button (click)="fun.back()" class="btnsize" color="mytheme">
+        <!-- <ion-icon name="share-alt"  class="rotateCss" color="light"></ion-icon> -->
+        <img src='assets\images\back-btn.png' class="rotateCss" style="width: 15px;" alt="Back" color="light">
+    </ion-fab-button>
+</ion-fab>

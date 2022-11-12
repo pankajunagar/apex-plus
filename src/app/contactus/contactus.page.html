@@ -1,0 +1,96 @@
+<ion-header class="mybg">
+    <ion-toolbar color="mytheme">
+        <ion-buttons slot="start" style="margin-right: 10px;">
+            <ion-img class="imgwidth" src="assets/images/apexicon.png"></ion-img>
+        </ion-buttons>
+        <!-- <ion-buttons slot="start">
+            <ion-back-button color="light"></ion-back-button>
+            <ion-icon name="arrow-undo-outline"></ion-icon>
+        </ion-buttons> -->
+        <ion-title color="light"><strong>Contact us</strong></ion-title>
+        <ion-buttons slot="end" style="margin-right: 20px;">
+            <i class="fa fa-times" slot="icon-only" (click)="dismiss()" color="light" style="color: white;"></i>
+            <!-- <ion-icon name="close" slot="icon-only" (click)="dismiss()" color="light" margin></ion-icon> -->
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- <div class="map-wrapper">
+    <iframe [src]="mapLink"  width="100%" height="380" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+  </div> -->
+
+
+    <div class="text-center " *ngIf="!fun.networkStatus">
+        <img src="assets/images/no-internet.jpg">
+    </div>
+
+
+    <div *ngIf='fun.networkStatus'>
+        <div *ngFor="let add of address, let i = index" margin>
+            <ion-row *ngIf="add.add1!=''" class="tpmargin">
+                <ion-col size="1">
+                    <!-- <ion-icon name="person" color="light"></ion-icon> -->
+                    <i class="fa fa-user" color="light"></i>
+                </ion-col>
+                <ion-col class="margintop">
+                    <ion-text class="whitecolor"><strong>{{add.add1}}</strong></ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="1">
+                    <!-- <ion-icon name="pin" color="light"></ion-icon> -->
+                    <i class="fa fa-map-marker" color="light"></i>
+                </ion-col>
+                <ion-col class="margintp">
+                    <ion-row *ngIf="add.add2!=''" class="tpmargin">
+                        <ion-text class="whitecolor">{{add.add2}}</ion-text>
+                    </ion-row>
+                    <ion-row *ngIf="add.add3!=''" class="tpmargin">
+                        <ion-text class="whitecolor">{{add.add3}}</ion-text>
+                    </ion-row>
+                    <ion-row *ngIf="add.taluka!=''" class="tpmargin">
+                        <ion-text class="whitecolor">{{add.taluka}}</ion-text>
+                    </ion-row>
+                    <ion-row *ngIf="add.city!=''" class="tpmargin">
+                        <ion-text class="whitecolor">{{add.city}},</ion-text>
+                    </ion-row>
+                    <ion-row *ngIf="add.state!='' || add.country!=''" class="tpmargin">
+                        <ion-text class="whitecolor">{{add.state}}, {{add.country}}</ion-text>
+                    </ion-row>
+                    <ion-row *ngIf="add.pincode!=''" class="tpmargin">
+                        <ion-text class="whitecolor">{{add.pincode}}</ion-text>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+            <ion-row *ngIf="add.email!=''">
+                <ion-col size="1">
+                    <!-- <ion-icon name="mail" color="light"></ion-icon> -->
+                    <i class="fa fa-envelope" color="light"></i>
+                </ion-col>
+                <ion-col class="margintop">
+                    <ion-text><a href="mailto:{{add.email}}">{{add.email}}</a></ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row *ngIf="add['mobile'].length >0" class="tpmargin">
+                <ion-col size="1">
+                    <!-- <ion-icon name="call" color="light"></ion-icon> -->
+                    <i class="fa fa-phone-square" color="light"></i>
+                </ion-col>
+                <ion-col class="margintop">
+                    <div *ngFor="let mob of mobileno[i]">
+                        <ion-text class="marginright"><a href="tel:{{mob}}">{{mob}} </a></ion-text>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <div class="sep"></div>
+        </div>
+    </div>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" class="position">
+    <ion-fab-button (click)="fun.back()" class="btnsize" color="mytheme">
+        <!-- <ion-icon name="share-alt"  class="rotateCss" color="light"></ion-icon> -->
+        <img src='assets\images\back-btn.png' class="rotateCss" style="width: 15px;" alt="Back" color="light">
+    </ion-fab-button>
+</ion-fab>

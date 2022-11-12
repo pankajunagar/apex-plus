@@ -1,0 +1,43 @@
+.imgwidth{
+    width: 25px;
+}
+.tabbg{
+    background-color: #000000;
+}
+ion-tab-button {
+    font-size: 11px;
+    --color-selected: #b0ca1f;
+    --color: #faf6f6;
+    ion-icon{
+       font-size: 30px;
+    }
+}
+.linkbg{
+    background-color: #b0ca1f;
+    position: sticky;
+    height: 26px;
+}
+.blink {
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+  }
+  @keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  @-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  .imgsize{
+    height: 30px;
+    padding-bottom: 5px;
+    padding-top: 3px;
+  }
+  .iconmargin{
+    margin-bottom: -4px;
+     margin-left: 5px;
+     margin-right: 5px;
+  }
