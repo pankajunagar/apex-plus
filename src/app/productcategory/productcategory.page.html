@@ -6,12 +6,13 @@
         <ion-title text-center color="light"><strong>Product Category</strong></ion-title>
         <ion-buttons slot="end">
             <!-- <ion-icon name="more" slot="icon-only" (click)="moreoption($event)" color="light" margin></ion-icon> -->
-            <img src='assets\images\more.png' slot="icon-only" (click)="moreoption($event)" color="light" margin style="height: 20px;margin: 8px;" />
+            <img src='assets\images\more.png' slot="icon-only" (click)="moreoption($event)" color="light" margin
+                style="height: 20px;margin: 8px;" />
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content scrollY="false">
     <!-- <ion-row padding>
     <ion-col *ngFor="let list of categoryList" size-lg="2" size-md="2" size-sm="2" size-xs="4" class="divpadding">
       <ion-card class="divcard" (click)='viewProduct(list)' no-margin no-padding>
@@ -32,23 +33,37 @@
         </a>
     </div>
 
-    <div *ngIf='fun.networkStatus'>
-        <div *ngFor="let list of categoryList" style="margin-top: -5px;">
-            <div style="height: 80px; margin : 5px">
-                <ion-row size-lg="2" size-md="2" size-sm="2" size-xs="4" (click)='viewProduct(list)'>
-                    <ion-col size="3">
-                        <ion-avatar class="item-avatar">
-                            <img [src]="list.image" (load)="list.loaded = true" [hidden]="!list.loaded">
-                            <img src="assets/images/loading-gif.gif" [hidden]="list.loaded" style="width: 76%;">
-                        </ion-avatar>
-                    </ion-col>
-                    <ion-col size="9" style="padding: 15px; display: flex; align-items: center; justify-content: center;">
-                        <ion-text class="title">{{list.category_name}}</ion-text>
-                    </ion-col>
-                </ion-row>
-            </div>
-            <div class="sep"></div>
+    <div style="height: 100%;" *ngIf='fun.networkStatus'>
 
+        <alphabetical-scroll-bar [alphabet]="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" [validLetters]="letterGroups"
+            [disableInvalidLetters]="false" [prioritizeHidingInvalidLetters]="true" [letterMagnification]="true"
+            [magnifyDividers]="true" [magnificationMultiplier]="2" [magnificationCurve]="[1, .7, .6, .4, .2, 0]"
+            [exactX]="false" [navigateOnHover]="true" [letterSpacing]="'1%'" [offsetSizeCheckInterval]="100"
+            (letterChange)="goToLetterGroup($event)"
+            (isActive)="!$event && enableScroll()">
+        </alphabetical-scroll-bar>
+
+        <div class="no-scrollbar-container" *ngIf="categoryGroups.length">
+            <div [id]="'alphabet-scroll-'+ group.letterGroup" *ngFor="let group of this.categoryGroups">
+                <div *ngFor="let list of group.categories" style="margin-top: -5px;">
+                <div style="height: 80px; margin : 5px">
+                    <ion-row size-lg="2" size-md="2" size-sm="2" size-xs="4" (click)='viewProduct(list)'>
+                        <ion-col size="3">
+                            <ion-avatar class="item-avatar">
+                                <img [src]="list.image" (load)="list.loaded = true" [hidden]="!list.loaded">
+                                <img src="assets/images/loading-gif.gif" [hidden]="list.loaded" style="width: 76%;">
+                            </ion-avatar>
+                        </ion-col>
+                        <ion-col size="9"
+                            style="padding: 15px; display: flex; align-items: center; justify-content: center;">
+                            <ion-text class="title">{{list.category_name}}</ion-text>
+                        </ion-col>
+                    </ion-row>
+                </div>
+                <div class="sep"></div>
+
+                </div>
+           </div>
         </div>
     </div>
 

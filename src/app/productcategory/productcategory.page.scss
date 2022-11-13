@@ -54,3 +54,17 @@
 //     max-width: 100px !important;  //any size
 //     max-height: 120px !important; //any size 
 // }
+
+  .no-scrollbar-container {
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 100%;
+    padding-right: 17px;
+    box-sizing: content-box;
+  }
+  
+  .disable-scroll {
+    overflow-y: hidden;
+  }
+  
