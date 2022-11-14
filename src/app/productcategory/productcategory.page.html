@@ -37,10 +37,10 @@
 
         <alphabetical-scroll-bar [alphabet]="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" [validLetters]="letterGroups"
             [disableInvalidLetters]="false" [prioritizeHidingInvalidLetters]="true" [letterMagnification]="true"
-            [magnifyDividers]="true" [magnificationMultiplier]="2" [magnificationCurve]="[1, .7, .6, .4, .2, 0]"
-            [exactX]="false" [navigateOnHover]="true" [letterSpacing]="'1%'" [offsetSizeCheckInterval]="100"
+            [magnifyDividers]="true" [magnificationMultiplier]="2" [magnificationCurve]="[1, 0]"
+            [exactX]="true" [navigateOnHover]="false" [letterSpacing]="'1%'" [offsetSizeCheckInterval]="100"
             (letterChange)="goToLetterGroup($event)"
-            (isActive)="!$event && enableScroll()">
+            (isActive)="!$event && enableScroll($event)">
         </alphabetical-scroll-bar>
 
         <div class="no-scrollbar-container" *ngIf="categoryGroups.length">

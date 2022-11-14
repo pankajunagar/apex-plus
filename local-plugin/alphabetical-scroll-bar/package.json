@@ -1,0 +1,54 @@
+{
+  "_from": "alphabetical-scroll-bar@^2.1.2",
+  "_id": "alphabetical-scroll-bar@2.1.2",
+  "_inBundle": false,
+  "_integrity": "sha512-6nYAeVbgnQRR7cDpOQXzPhLogkLZhIr0BF1gJv4FH/LH4Bx4oAXHVw12oJib81Kym84vCzM7a570GlsR4Dkk2g==",
+  "_location": "/alphabetical-scroll-bar",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "alphabetical-scroll-bar@^2.1.2",
+    "name": "alphabetical-scroll-bar",
+    "escapedName": "alphabetical-scroll-bar",
+    "rawSpec": "^2.1.2",
+    "saveSpec": null,
+    "fetchSpec": "^2.1.2"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/alphabetical-scroll-bar/-/alphabetical-scroll-bar-2.1.2.tgz",
+  "_shasum": "ff8df5d8e0abc0945d6bc6c7119301e21ca84176",
+  "_spec": "alphabetical-scroll-bar@^2.1.2",
+  "_where": "/Volumes/Personal/ionic/ionic-repo/apex-plus/apex-plus",
+  "bundleDependencies": false,
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "deprecated": false,
+  "description": "A very responsive, simple and customizable alphabetical scroll bar (index scrollbar) that can be used in angular projects.",
+  "es2015": "fesm2015/alphabetical-scroll-bar.js",
+  "esm2015": "esm2015/alphabetical-scroll-bar.js",
+  "fesm2015": "fesm2015/alphabetical-scroll-bar.js",
+  "keywords": [
+    "scrollbar",
+    "alphabetical",
+    "angular",
+    "ngx",
+    "index-scrollbar"
+  ],
+  "license": "MIT",
+  "main": "bundles/alphabetical-scroll-bar.umd.js",
+  "metadata": "alphabetical-scroll-bar.metadata.json",
+  "module": "fesm2015/alphabetical-scroll-bar.js",
+  "name": "alphabetical-scroll-bar",
+  "peerDependencies": {
+    "@angular/common": "^10.1.6",
+    "@angular/core": "^10.1.6",
+    "@angular/cdk": "^13.2.3"
+  },
+  "sideEffects": false,
+  "typings": "alphabetical-scroll-bar.d.ts",
+  "version": "2.1.2"
+}
