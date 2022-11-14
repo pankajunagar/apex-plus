@@ -43,7 +43,7 @@
     "@ionic/angular": "^4.1.0",
     "@ionic/pro": "2.0.3",
     "@ionic/storage": "^2.2.0",
-    "alphabetical-scroll-bar": "^2.1.2",
+    "alphabetical-scroll-bar": "file:local-plugin/alphabetical-scroll-bar",
     "cordova": "^10.0.0",
     "cordova-android": "9.1.0",
     "cordova-plugin-advanced-http": "^2.4.1",
@@ -140,8 +140,8 @@
       "cordova-plugin-androidx-adapter": {}
     },
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ]
   }
 }
