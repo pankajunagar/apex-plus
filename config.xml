@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="10301" id="com.iinfosoft.apexplus" version="1.3.1" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="10306" id="com.iinfosoft.apexplus" version="1.3.6" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ApexPlus</name>
     <description>This E-commerce app starter is made by expert UI developers to provide a great app UI for your own e-commerce app. Now you can start your own e-commerce or shopping app with these functionalities. This is a great starting point for app development, as all pages and components are set. Hence, all you need here is to integrate your back-end and feed in the data. This app has many features common with popular apps like Amazon, Flipkart etc.</description>
     <author email="admin@enappd.com" href="https://enappd.com/">Enappd Team</author>
