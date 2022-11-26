@@ -43,3 +43,9 @@ This Ionic 4 app contains following features
 
 ## Why Ionic 4
 Ionic 4 gives a superior performance over previous versions as it is based on Angular 6, superior version of Angular. The code is modular by default in Ionic 4. Therefore, it can be rearranged to modify the app as per liking. Above all, it assures nearly bug-free builds on devices.
+
+
+## Key stire Alias and password
+
+alias name: alias_name
+password: iinfosoft
