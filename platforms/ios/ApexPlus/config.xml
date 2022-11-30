@@ -68,9 +68,6 @@
     <feature name="FCMPlugin">
         <param name="ios-package" value="FCMPlugin" />
     </feature>
-    <feature name="FileOpener2">
-        <param name="ios-package" value="FileOpener2" />
-    </feature>
     <name>ApexPlus</name>
     <description>This E-commerce app starter is made by expert UI developers to provide a great app UI for your own e-commerce app. Now you can start your own e-commerce or shopping app with these functionalities. This is a great starting point for app development, as all pages and components are set. Hence, all you need here is to integrate your back-end and feed in the data. This app has many features common with popular apps like Amazon, Flipkart etc.</description>
     <author email="admin@enappd.com" href="https://enappd.com/">Enappd Team</author>

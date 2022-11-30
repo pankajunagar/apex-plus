@@ -87,10 +87,6 @@
             {
               "xml": "<feature name=\"FCMPlugin\"><param name=\"ios-package\" value=\"FCMPlugin\" /></feature>",
               "count": 1
-            },
-            {
-              "xml": "<feature name=\"FileOpener2\"><param name=\"ios-package\" value=\"FileOpener2\" /></feature>",
-              "count": 1
             }
           ]
         }
@@ -208,9 +204,6 @@
     },
     "cordova-plugin-fcm-with-dependecy-updated": {
       "IOS_FIREBASE_MESSAGING_VERSION": "~> 7.4.0",
-      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
-    },
-    "cordova-plugin-file-opener2": {
       "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
     },
     "cordova-plugin-androidx-adapter": {
@@ -607,14 +600,6 @@
       "clobbers": [
         "FCM"
       ]
-    },
-    {
-      "id": "cordova-plugin-file-opener2.FileOpener2",
-      "file": "plugins/cordova-plugin-file-opener2/www/plugins.FileOpener2.js",
-      "pluginId": "cordova-plugin-file-opener2",
-      "clobbers": [
-        "cordova.plugins.fileOpener2"
-      ]
     }
   ],
   "plugin_metadata": {
@@ -636,7 +621,6 @@
     "cordova-plugin-x-socialsharing": "5.6.4",
     "cordova-sqlite-storage": "5.0.0",
     "cordova-plugin-fcm-with-dependecy-updated": "7.8.0",
-    "cordova-plugin-file-opener2": "3.0.5",
     "cordova-plugin-androidx-adapter": "1.1.3"
   }
 }

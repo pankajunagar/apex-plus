@@ -132,7 +132,6 @@
 		1F47B69F53C8432CB5667D02 /* FCMPluginIOS9Support.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FE4CFEEB2D4AE9A7F1F20D /* FCMPluginIOS9Support.m */; };
 		BDB4FA2C2ABA4ADA9A4962CE /* FCMNotificationCenterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A707B0A3B23D4056AF51B409 /* FCMNotificationCenterDelegate.m */; };
 		5457DBD5D75B4FA18C0BDE7A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3301ECF2EE0448A8AFBEB593 /* GoogleService-Info.plist */; };
-		F4015374911244EBBBB9AAAE /* FileOpener2.m in Sources */ = {isa = PBXBuildFile; fileRef = 913B813CAD964C878A1D70B1 /* FileOpener2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -382,8 +381,6 @@
 		8C0ABC83198F428783D950E4 /* FCMPluginIOS9Support.h */ = {isa = PBXFileReference; name = "FCMPluginIOS9Support.h"; path = "cordova-plugin-fcm-with-dependecy-updated/FCMPluginIOS9Support.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		29CDF17ADC7B4050A97B047C /* FCMNotificationCenterDelegate.h */ = {isa = PBXFileReference; name = "FCMNotificationCenterDelegate.h"; path = "cordova-plugin-fcm-with-dependecy-updated/FCMNotificationCenterDelegate.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		3301ECF2EE0448A8AFBEB593 /* GoogleService-Info.plist */ = {isa = PBXFileReference; name = "GoogleService-Info.plist"; path = "Resources/GoogleService-Info.plist"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.xml; explicitFileType = undefined; includeInIndex = 0; };
-		913B813CAD964C878A1D70B1 /* FileOpener2.m */ = {isa = PBXFileReference; name = "FileOpener2.m"; path = "cordova-plugin-file-opener2/FileOpener2.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		79D0114C7DD645748AA551E3 /* FileOpener2.h */ = {isa = PBXFileReference; name = "FileOpener2.h"; path = "cordova-plugin-file-opener2/FileOpener2.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -701,8 +698,6 @@
 				256A3AAA27A94D0A85017FD8 /* AppDelegate+FCMPlugin.h */,
 				8C0ABC83198F428783D950E4 /* FCMPluginIOS9Support.h */,
 				29CDF17ADC7B4050A97B047C /* FCMNotificationCenterDelegate.h */,
-				913B813CAD964C878A1D70B1 /* FileOpener2.m */,
-				79D0114C7DD645748AA551E3 /* FileOpener2.h */,
 			);
 			name = Plugins;
 			path = ApexPlus/Plugins;
@@ -967,7 +962,6 @@
 				845BEC0DDCD246FC866B1936 /* AppDelegate+FCMPlugin.m in Sources */,
 				1F47B69F53C8432CB5667D02 /* FCMPluginIOS9Support.m in Sources */,
 				BDB4FA2C2ABA4ADA9A4962CE /* FCMNotificationCenterDelegate.m in Sources */,
-				F4015374911244EBBBB9AAAE /* FileOpener2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -388,14 +388,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "FCM"
       ]
-    },
-    {
-      "id": "cordova-plugin-file-opener2.FileOpener2",
-      "file": "plugins/cordova-plugin-file-opener2/www/plugins.FileOpener2.js",
-      "pluginId": "cordova-plugin-file-opener2",
-      "clobbers": [
-        "cordova.plugins.fileOpener2"
-      ]
     }
   ];
   module.exports.metadata = {
@@ -417,7 +409,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-x-socialsharing": "5.6.4",
     "cordova-sqlite-storage": "5.0.0",
     "cordova-plugin-fcm-with-dependecy-updated": "7.8.0",
-    "cordova-plugin-file-opener2": "3.0.5",
     "cordova-plugin-androidx-adapter": "1.1.3"
   };
 });

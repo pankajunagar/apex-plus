@@ -9,7 +9,7 @@
         "parents": {
           "/manifest/application": [
             {
-              "xml": "<application android:usesCleartextTraffic=\"true\" />",
+              "xml": "<application android:networkSecurityConfig=\"@xml/network_security_config\" />",
               "count": 2,
               "mode": "merge",
               "id": "config.xml",
@@ -23,7 +23,7 @@
               }
             },
             {
-              "xml": "<application android:networkSecurityConfig=\"@xml/network_security_config\" />",
+              "xml": "<application android:usesCleartextTraffic=\"true\" />",
               "count": 1,
               "mode": "merge",
               "id": "config.xml",
@@ -64,10 +64,6 @@
             },
             {
               "xml": "<feature name=\"FCMPlugin\"><param name=\"android-package\" value=\"com.gae.scaffolder.plugin.FCMPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"FileOpener2\"><param name=\"android-package\" value=\"io.github.pwlin.cordova.plugins.fileopener2.FileOpener2\" /></feature>",
               "count": 1
             },
             {
@@ -118,10 +114,6 @@
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
-              "count": 2
-            },
-            {
-              "xml": "<uses-permission android:name=\"android.permission.REQUEST_INSTALL_PACKAGES\" />",
               "count": 1
             },
             {
@@ -177,12 +169,7 @@
               "count": 1
             }
           ],
-          "application": [
-            {
-              "xml": "<provider android:authorities=\"${applicationId}.fileOpener2.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"io.github.pwlin.cordova.plugins.fileopener2.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/opener_paths\" /></provider>",
-              "count": 1
-            }
-          ],
+          "application": [],
           "/*/application": [
             {
               "xml": "<receiver android:enabled=\"true\" android:name=\"nl.xservices.plugins.ShareChooserPendingIntent\"><intent-filter><action android:name=\"android.intent.action.SEND\" /></intent-filter></receiver>",
@@ -245,10 +232,6 @@
       "ANDROID_FIREBASE_BOM_VERSION": "26.0.0",
       "ANDROID_GOOGLE_SERVICES_VERSION": "4.3.4",
       "ANDROID_GRADLE_TOOLS_VERSION": "4.1.0",
-      "PACKAGE_NAME": "com.iinfosoft.apexplus"
-    },
-    "cordova-plugin-file-opener2": {
-      "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "com.iinfosoft.apexplus"
     },
     "cordova-plugin-file-transfer": {
@@ -564,14 +547,6 @@
       ]
     },
     {
-      "id": "cordova-plugin-file-opener2.FileOpener2",
-      "file": "plugins/cordova-plugin-file-opener2/www/plugins.FileOpener2.js",
-      "pluginId": "cordova-plugin-file-opener2",
-      "clobbers": [
-        "cordova.plugins.fileOpener2"
-      ]
-    },
-    {
       "id": "cordova-plugin-file-transfer.FileTransferError",
       "file": "plugins/cordova-plugin-file-transfer/www/FileTransferError.js",
       "pluginId": "cordova-plugin-file-transfer",
@@ -680,7 +655,6 @@
     "cordova-plugin-device": "2.0.3",
     "cordova-plugin-document-viewer": "0.9.13",
     "cordova-plugin-fcm-with-dependecy-updated": "7.8.0",
-    "cordova-plugin-file-opener2": "3.0.5",
     "cordova-plugin-file-transfer": "1.7.1",
     "cordova-plugin-filepath": "1.5.8",
     "cordova-plugin-geolocation": "4.0.2",
